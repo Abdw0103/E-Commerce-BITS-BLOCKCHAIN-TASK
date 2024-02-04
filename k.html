@@ -10,7 +10,6 @@
       margin: 0;
       padding: 0;
       background-color: #e0ffe0; /* Light green background for aesthetic */
-      /* comment*/
     }
 
     header {
@@ -121,6 +120,21 @@
     .like-button:hover {
       background-color: #45a049;
     }
+.like-button,
+.buy-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 10px; /* Added margin for separation */
+}
+
+.like-button:hover,
+.buy-button:hover {
+  background-color: #45a049;
+}
   </style>
 </head>
 
@@ -158,6 +172,7 @@ My First Website <br>Helping partner Bits blockchain and W3 HTML
       <img id="modalImage" class="product-image" alt="">
       <p id="modalDescription"></p>
       <button class="like-button" onclick="toggleLike()">Like</button>
+      <button class="buy-button" onclick="buyProduct(modalTea.name, modalTea.description)">Buy</button>
     </div>
   </div>
 
@@ -191,6 +206,7 @@ My First Website <br>Helping partner Bits blockchain and W3 HTML
             <h3>${tea.name}</h3>
             <p>${tea.description}</p>
             <button class="like-button" onclick="toggleLike()">Like</button>
+            <button class="buy-button" onclick="buyProduct('${tea.name}', '${tea.description}')">Buy</button>
           `;
           productContainer.appendChild(productCard);
         });
@@ -225,7 +241,10 @@ function searchOnEvent(event) {
     function toggleLike() {
       alert('Liked by the user!');
     }
-
+function buyProduct(name, description) {
+  alert(`You have bought ${name} - ${description}. 
+Purchase functionality is not implemented in this task.`);
+}
     
     document.getElementById('connectWallet').addEventListener('click', function () {
       alert('Connect Wallet functionality is not implemented in this task.');
